@@ -9,31 +9,34 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/idTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아이디"/>
+        android:text="아이디" />
 
     <EditText
+        android:id="@+id/idEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/pwTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호"/>
+        android:layout_marginTop="10dp"
+        android:text="비밀번호" />
 
     <EditText
+        android:id="@+id/pwEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword" />
+
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인" />
 
 
 

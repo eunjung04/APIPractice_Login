@@ -10,13 +10,19 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setValue()
         setupEvents()
-
+        setValue()
     }
 
     override fun setValue() {
-        val inputId=idTxt.text.toString()
+
+        loginBtn.setOnClickListener {
+            val inputId = idEdt.text.toString() // cho881020 => 조경진
+            val inputPw = pwEdt.text.toString() // asdf1234
+
+//            로그인?
+
+        }
 
     }
 
