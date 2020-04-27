@@ -14,9 +14,9 @@ class ServerUtil {
 
     companion object{
         //어느 서버(호스트)로 가야하는지 적어두는 변수.
-        //도메인(api.naver.com) or IP주소(192.168.10.244:5000)등
+        //도메인(api.naver.com) or IP주소(192.168.0.243:5000)등
         //메인 주소를 저장해두는 변수
-        val BASE_URL="http://192.168.10.224:5000"
+        val BASE_URL="http://192.168.0.243:5000"
 
         //필요한 변수를 넣는 요령.
         //화면에서=>서버로 전달해야하는 데이터.
@@ -54,7 +54,7 @@ class ServerUtil {
                     //서버의 응답은 보통 JSON양식으로 가공되어 옴.
                     //받을때는 일단 String타입으로  받게 됨.=>JSON으로 변환해서 액티비티에 전달.
 
-                    val body = response.body!!.toString()
+                    val body = response.body!!.string()
                     val json = JSONObject(body)
 
                     handler?.onResponse(json)
