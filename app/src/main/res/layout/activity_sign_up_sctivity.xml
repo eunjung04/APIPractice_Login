@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,45 +8,60 @@
     android:padding="10dp"
     tools:context=".SignUpSctivity">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아이디"/>
+        android:text="아이디" />
 
     <EditText
-        android:id="@+id/loginEdt"
+        android:id="@+id/loginIdEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호"/>
+        android:text="비밀번호" />
 
     <EditText
         android:id="@+id/pwEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="휴대폰번호"/>
+        android:text="이름" />
 
     <EditText
-        android:id="@+id/phoneNumdt"
+        android:id="@+id/nameEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginTop="5dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="핸드폰 번호" />
+
+    <EditText
+        android:id="@+id/phoneNumEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp" />
 
     <Button
-        android:id="@+id/signBtn"
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="회원가입 하기"
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="회원가입 하기" />
+</LinearLayout>
