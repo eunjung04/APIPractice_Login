@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.apipractice_login.ServerUtil.ServerUtil
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_sign_up_sctivity.*
 import org.json.JSONObject
 
@@ -26,14 +25,14 @@ class SignUpSctivity : BaseActivity() {
             val name=nameEdt.text.toString()
             val phoneNum=phoneNumEdt.text.toString()
 
-            ServerUtil.putRequestSignUp(mContext,id,pw,name,phoneNum, object : json{
-                override fun onResponse(jdon : JSONObject){
+            ServerUtil.putRequestSignUp(mContext,id,pw,name,phoneNum, object : ServerUtil.JsonResponseHandler{
+                override fun onResponse(json : JSONObject){
                     // Log.d("회원가입응답", json.toString())
 
                     val code=json.getInt("code")
 
                     if(code==200) {
-                        Toast.makeText(mContext,"회원가입성공!", Toast)
+                        Toast.makeText(mContext,"회원가입성공!", Toast.LENGTH_SHORT).show()
                         finish()
                     }
                     else{
