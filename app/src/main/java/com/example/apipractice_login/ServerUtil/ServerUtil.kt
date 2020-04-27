@@ -66,5 +66,51 @@ class ServerUtil {
 
 
         }
+        //회원가입 기능 별도로 추가=>액티비티에서 사용
+
+        fun putRequestSignUp(context: Context, id: String, pw: String, name : String, phone : String, handler : JsonResponseHandler?){
+
+           val client=OkHttpClient()
+
+            val urlStr="${BASE_URL}/auth"
+
+            val formBody=FormBody.Builder()
+                .add("login_id", id)
+                .add("password",pw)
+                .add("name", name)
+                .add("phone", phone)
+                .build()
+
+            val request=Request.Builder()
+                .url(urlStr)
+                .put(formBody)
+                //.header()=>API가 헤더를 요구하면 추가해야함.
+                .build()
+
+            client.newCall(request).enqueue(object :Callback{
+                override fun onFailure(call: Call, e: IOException) {
+                    e.printStackTrace()
+
+                }
+
+                override fun onResponse(call: Call, response: Response) {
+                    val body=response.body!!.string()
+                    val json=JSONObject(body)
+
+                    handler?.onResponse(json)
+
+                }
+
+            })
+
+
+
+
+        }
+
     }
+
+
+
+
 }
