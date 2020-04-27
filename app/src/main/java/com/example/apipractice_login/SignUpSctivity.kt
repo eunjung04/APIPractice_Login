@@ -12,11 +12,11 @@ class SignUpSctivity : BaseActivity() {
         setValue()
     }
 
-    override fun setValue() {
+    override fun setupEvents() {
 
     }
 
-    override fun setupEvents() {
+    override fun setValue() {
 
     }
 }
