@@ -1,5 +1,6 @@
 package com.example.apipractice_login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -36,12 +37,23 @@ class LoginActivity : BaseActivity() {
 
 
                         //임시로 서버 응답 확인 하기 위한 코드
-                     //   Log.d("서버응답JSON", json.toString())
+                        Log.d("서버응답JSON", json.toString())
 
                         val code=json.getInt("code")
 
                         if(code==200) {
                             //로그인 성공
+
+                            val data=json.getJSONObject("data")
+                            val user=data.getJSONObject("user")
+                            val name=user.getString("name")
+
+
+
+
+                            val myIntent=Intent(mContext, MainActivity::class.java)
+                            myIntent.putExtra("userName", name)
+                            startActivity(myIntent)
                         }
                         else{
                             val message=json.getString("message")
