@@ -6,7 +6,8 @@ import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity : BaseActivity() {
 
-    private var lateinit var userName : String
+
+   private lateinit var userName : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +22,7 @@ class MainActivity : BaseActivity() {
 
     override fun setValue() {
 
-        userName=intent.getStringArrayExtra("userName")
+        userName=intent.getStringExtra("userName")
 
         nameTxt.text=userName
 
