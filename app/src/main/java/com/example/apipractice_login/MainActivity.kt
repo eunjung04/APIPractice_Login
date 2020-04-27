@@ -6,7 +6,7 @@ import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity : BaseActivity() {
 
-    private var lateinit var
+    private var lateinit var userName : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
