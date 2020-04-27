@@ -7,6 +7,8 @@ import android.util.Log
 import android.widget.Toast
 import com.example.apipractice_login.ServerUtil.ServerUtil
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.pwEdt
+import kotlinx.android.synthetic.main.activity_sign_up_sctivity.*
 import org.json.JSONObject
 
 class LoginActivity : BaseActivity() {
@@ -20,6 +22,11 @@ class LoginActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        signBtn.setOnClickListener {
+            val myIntent=Intent(mContext,SignUpSctivity::class.java)
+            startActivity(myIntent)
+        }
 
         loginBtn.setOnClickListener {
             val inputId = idEdt.text.toString() // cho881020 => 조경진
